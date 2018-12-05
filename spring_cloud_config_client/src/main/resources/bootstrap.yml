@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    config:
+      label: master
+      profile: dev
+      uri: https://localhost:8091/application/dev
+      discovery:
+        enable: true
+        service-id: spring-config-config-server

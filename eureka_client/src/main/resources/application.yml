@@ -2,10 +2,11 @@ server:
   port: 8001
 spring:
   application:
-    name: eureka_client
+    name: eureka-client
 eureka:
+  instance:
+    prefer-ip-address: true
+    appname: eureka-client
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
-  instance:
-    prefer-ip-address: true

@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: basic-service-info
+server:
+  port: 9111
+eureka:
+  instance:
+    appname: basic-service-info
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

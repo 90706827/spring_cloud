@@ -1,0 +1,29 @@
+server:
+  #服务端口
+  port: 8091
+spring:
+  profiles:
+    #配置使用subversion仓库读取配置，相关配置还有git、native（本地文件）、vault
+    active: git
+  application:
+    #服务名称
+    name: spring-config-config-server
+  cloud:
+    config:
+      server:
+        #配置git仓库地址和账户
+        git:
+          uri: https://github.com/90706827/spring-cloud-config.git
+          #配置文件所在的分支
+          default-label: master
+          #git仓库的用户名
+          username: 90706827
+          #git仓库的密码 公开仓库可以不用配置
+          password:
+          search-paths: /**
+eureka:
+  client:
+    serviceUrl:
+      #服务注册中心
+      defaulZone: http://localhost:8761/eureka/
+
