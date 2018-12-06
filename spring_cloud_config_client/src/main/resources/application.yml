@@ -8,8 +8,7 @@ spring:
 feign:
   hystrix:
     enabled: true
-eureka:
-  client:
-    serviceUrl:
-      #服务注册中心
-      defaulZone: http://localhost:8761/eureka/
+logging:
+  level:
+    org.springframework.cloud: DEBUG
+    org.springframework.BOOT: DEBUG

@@ -1,0 +1,15 @@
+#非对称加密配置
+encrypt:
+  key-store:
+    #密钥库文件路径
+    location: classpath:/config-server-key.keystore
+    #密钥库密码
+    password: springcloud
+    #密钥库别名
+    alias: config-server-key
+    #密钥密码
+    secret: springcloud
+## 关闭管理安全控制 配合手动刷新curl -X POST http://localhost:8091/refresh/
+management:
+  security:
+    enabled: false

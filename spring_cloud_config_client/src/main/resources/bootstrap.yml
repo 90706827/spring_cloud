@@ -1,9 +1,27 @@
 spring:
+  application:
+    # 对应config server所获取的配置文件的{application}
+    name: application
   cloud:
     config:
-      label: master
+      # 指定Git仓库的分支，对应config server所获取的配置文件的{label}
+      label: dev1
+      # profile对应config server所获取的配置文件中的{profile}
       profile: dev
-      uri: https://localhost:8091/application/dev
       discovery:
-        enable: true
+        # 表示使用服务发现组件中的Config Server，而不自己指定Config Server的uri，默认false
+        enabled: true
+        # 指定Config Server在服务发现中的serviceId，默认是configserver  eureka服务注册后适用此方法
         service-id: spring-config-config-server
+#      uri: http://localhost:8091
+      ## 服务的启用 # 开启基于HTTP basic的认证 后必须设置密码访问
+      username: user
+      password: password123
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+## 关闭管理安全控制 配合手动刷新curl -X POST http://localhost:8092/refresh/
+management:
+  security:
+    enabled: false
