@@ -12,6 +12,7 @@
     <modules>
         <module>eureka_client</module>
         <module>eureka_server</module>
+        <module>eureka_server_backup</module>
         <module>spring_cloud_config_client</module>
         <module>spring_cloud_config_server</module>
     </modules>

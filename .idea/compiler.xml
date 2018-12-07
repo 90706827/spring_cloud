@@ -9,6 +9,7 @@
         <module name="basic_services_info" />
         <module name="eureka_client" />
         <module name="eureka_server" />
+        <module name="eureka_server_backup" />
         <module name="spring_cloud_config_client" />
         <module name="spring_cloud_config_server" />
       </profile>

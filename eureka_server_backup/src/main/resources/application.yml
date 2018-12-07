@@ -1,18 +1,18 @@
 server:
-  port: 8761
+  port: 8762
 spring:
   #C:\Windows\System32\drivers\etc\hosts 设置 127.0.0.1 eureka-server01 eureka-server02
   profiles:
     active:
-      - eureka-server01
+    - eureka-server02
   application:
-    name: eureka-server01
+    name: eureka-server02
 eureka:
   instance:
     #讲自己的ip注册到eureka server  不配置设为false
     prefer-ip-address: false
     #注册到eureka上的应用名称
-    appname: eureka-server01
+    appname: eureka-server02
   server:
     # 自我保护模式 eureka服务端丢失过多客户端服务时，不再注销客户端服务，当网络故障恢复后自动退出保护模式 默认true开启
     enable-self-preservation: true
@@ -24,8 +24,7 @@ eureka:
     #是否从eureka server获取注册信息 默认为true
     fetchRegistry: true
     serviceUrl:
-      #设置与eureka server交互的地址
-      defaultZone: http://admin:admin@eureka-server02:8762/eureka/
+      defaultZone: http://admin:admin@eureka-server01:8761/eureka/
 security:
   basic:
     #开启基于http basic的认证
