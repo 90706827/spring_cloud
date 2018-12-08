@@ -15,9 +15,9 @@ eureka:
     appname: eureka-server02
   server:
     # 自我保护模式 eureka服务端丢失过多客户端服务时，不再注销客户端服务，当网络故障恢复后自动退出保护模式 默认true开启
-    enable-self-preservation: true
+    enable-self-preservation: false
     #剔除失效服务的检测间隔时间
-    eviction-interval-timer-in-ms: 600000
+    eviction-interval-timer-in-ms: 20000
   client:
     #是否将自己注册到eureka server上 默认为true
     registerWithEureka: true

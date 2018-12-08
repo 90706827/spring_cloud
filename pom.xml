@@ -11,10 +11,16 @@
 
     <modules>
         <module>eureka_client</module>
+        <module>eureka_client_ribbon</module>
+        <module>eureka-client-feign</module>
+        <module>eureka_client_hystrix</module>
+        <module>eureka_client_turbine</module>
         <module>eureka_server</module>
         <module>eureka_server_backup</module>
         <module>spring_cloud_config_client</module>
         <module>spring_cloud_config_server</module>
+        <module>server_provider_user</module>
+        <module>server_provider_info</module>
     </modules>
 
 </project>

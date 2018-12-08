@@ -1,9 +1,10 @@
 package com.pomelo.eureka.feign;
 
+import com.pomelo.eureka.entity.Info;
 import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * @ClassName InvokerHelloWorldFeign
@@ -12,9 +13,9 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @Date 2018/12/5 21:41
  * @Version 1.0
  **/
-@FeignClient(name = "basic-service-info")
+@FeignClient(name = "server-provider-info")
 public interface InvokerHelloWorldFeign {
 
-    @RequestMapping(value = "/speak",method = RequestMethod.GET)
-    public String speak(@RequestParam(value = "body",required = false)String body);
+    @RequestMapping(value = "/info/{id}", method = RequestMethod.GET)
+    public Info speak(@PathVariable("id") Integer id);
 }

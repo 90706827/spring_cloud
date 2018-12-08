@@ -1,0 +1,14 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: eureka-client-ribbon
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:admin@eureka-server01:8761/eureka/,http://admin:admin@eureka-server02:8762/eureka/
+  instance:
+    prefer-ip-address: true
+server-provider-user:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule

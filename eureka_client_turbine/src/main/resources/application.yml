@@ -1,0 +1,14 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: eureka-client-turbine
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:admin@eureka-server01:8761/eureka/,http://admin:admin@eureka-server02:8762/eureka/
+  instance:
+    prefer-ip-address: true
+turbine:
+  appConfig: eureka-client-ribbon,eureka-client-feign,eureka-client-hystrix
+  clusterNameExpression: "'default'"
